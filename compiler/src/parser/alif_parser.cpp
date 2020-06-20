@@ -416,7 +416,7 @@ else if (Token[1] == "_س_" || Token[1] == "_ج_"){
 		if(ThisIsJavaScript)
 			LIB_PARSER_CG_BUFER = "\n OBJ_CLASS_WINDOW_" + ID[TheWindow] + "->AlifJavaScript_Run(wxT(R\"V0G0N( \n ";
 
-		for (int p = 2; p < o_tokens->TOTAL[o_tokens->Line]; p++) // _س_ ...C++...@ Alif @...C++... _س_
+		for (int p = 2; p <= o_tokens->TOTAL[o_tokens->Line]; p++) // _س_ ...C++...@ Alif @...C++... _س_
 		{
 			if (Token[p] == "_س_" || Token[p] == "_ج_") // End C++ Code
 			{
@@ -531,7 +531,7 @@ else if (LIB_INSIDE_CPP_CODE)
 {
 	// Continue to adding C++ Code to the Buffer
 
-		for (int p = 1; p < o_tokens->TOTAL[o_tokens->Line]; p++) // _س_ ...C++...@ Alif @...C++... _س_
+		for (int p = 1; p <= o_tokens->TOTAL[o_tokens->Line]; p++) // _س_ ...C++...@ Alif @...C++... _س_
 		{
 			if (Token[p] == "_س_" || Token[p] == "_ج_") // End C++ Code
 			{

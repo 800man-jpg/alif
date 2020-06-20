@@ -33,7 +33,7 @@
 
 using namespace std;
 
-static const string VERSION = "2.0.12";
+static const string VERSION = "2.0.14";
 bool DEBUG = false; // Beta
 
 // Alif includes

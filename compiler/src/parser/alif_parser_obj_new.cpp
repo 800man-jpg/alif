@@ -232,7 +232,7 @@ void parser_ObjNew(string Token[2048], CLASS_TOKEN *o_tokens){
 			// Searching for ARGs of this global Obj.
 
 			TempTokenCount = 0;
-			for (int p = 6; p < o_tokens->TOTAL[o_tokens->Line]; p++)
+			for (int p = 6; p <= o_tokens->TOTAL[o_tokens->Line]; p++)
 			{
 				if (Token[p] != "")
 				{
@@ -270,8 +270,8 @@ void parser_ObjNew(string Token[2048], CLASS_TOKEN *o_tokens){
 	}
 	
 	TempTokenCount = 0;
-	//for (int p = 5; p < o_tokens->TOTAL[o_tokens->Line]; p++)
-	for (int p = 6; p < o_tokens->TOTAL[o_tokens->Line]; p++)
+	//for (int p = 5; p <= o_tokens->TOTAL[o_tokens->Line]; p++)
+	for (int p = 6; p <= o_tokens->TOTAL[o_tokens->Line]; p++)
 	{
 		if (Token[p] != "")
 		{

@@ -1683,8 +1683,12 @@ string CheckForSyntax(string OBJECTIF_TYPE,		// OBJECTIF_TYPE
 					ErrorCode("لا يمكن إضافة عملية هنا ' " + SYNTAX[p - 1] + " " + SYNTAX[p] + " ' ", o_tokens);				
 			}
 
-			if (p >= SYNTAX_LONG)
+			if (p >= SYNTAX_LONG){
+				if(DEBUG)DEBUG_MESSAGE("######################", o_tokens); // DEBUG
+				for (int p = 1; p <= SYNTAX_LONG; p++)
+					if(DEBUG)DEBUG_MESSAGE("[" + SYNTAX[p] + "] ", o_tokens); // DEBUG
 				ErrorCode("لا يمكن الإنتهاء بعملية ' " + SYNTAX[p] + " ' ", o_tokens);
+			}
 
 			if (OBJECTIF_TYPE == "نص") // only acceptable operation in نص is '+'
 			{
@@ -3510,7 +3514,7 @@ string CheckForSyntax(string OBJECTIF_TYPE,		// OBJECTIF_TYPE
 						// Window : Option = ...
 
 						TempTokenCount = 0;
-						for (int p = 3; p < o_tokens->TOTAL[o_tokens->Line]; p++) // | = a * b + 2 / (c) + 1 |
+						for (int p = 3; p <= o_tokens->TOTAL[o_tokens->Line]; p++) // | = a * b + 2 / (c) + 1 |
 						{
 							if (SYNTAX[p] != "")
 							{

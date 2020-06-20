@@ -113,7 +113,7 @@ void parser_FunctionClass(string Token[2048], CLASS_TOKEN *o_tokens){
 					ErrorCode("يجب انهاء السطر بالإشارة ')' ", o_tokens);
 				
 				TempTokenCount = 0;
-				for (int p = (FUN_POS + 3); p < o_tokens->TOTAL[o_tokens->Line]; p++)
+				for (int p = (FUN_POS + 3); p <= o_tokens->TOTAL[o_tokens->Line]; p++)
 				{
 					if (Token[p] != "")
 					{
@@ -434,7 +434,7 @@ void parser_FunctionClass(string Token[2048], CLASS_TOKEN *o_tokens){
 					ErrorCode("يجب انهاء السطر بالإشارة ')' ", o_tokens);
 				
 				TempTokenCount = 0;
-				for (int p = (FUN_POS + 4); p < o_tokens->TOTAL[o_tokens->Line]; p++)
+				for (int p = (FUN_POS + 4); p <= o_tokens->TOTAL[o_tokens->Line]; p++)
 				{
 					if (Token[p] != "")
 					{
@@ -725,7 +725,7 @@ void parser_FunctionClass(string Token[2048], CLASS_TOKEN *o_tokens){
 					ErrorCode("يجب انهاء السطر بالإشارة ')' ", o_tokens);
 				
 				TempTokenCount = 0;
-				for (int p = (FUN_POS + 3); p < o_tokens->TOTAL[o_tokens->Line]; p++)
+				for (int p = (FUN_POS + 3); p <= o_tokens->TOTAL[o_tokens->Line]; p++)
 				{
 					if (Token[p] != "")
 					{

@@ -210,7 +210,7 @@ void parser_TwoPointOperator(string Token[2048], CLASS_TOKEN *o_tokens){
 				// *** *** *** *** *** ***
 
 				TempTokenCount = 0;
-				for (int p = 3; p < o_tokens->TOTAL[o_tokens->Line]; p++) // | a, b + 2, c) |
+				for (int p = 3; p <= o_tokens->TOTAL[o_tokens->Line]; p++) // | a, b + 2, c) |
 				{
 					if (Token[p] != "")
 					{
@@ -281,7 +281,7 @@ void parser_TwoPointOperator(string Token[2048], CLASS_TOKEN *o_tokens){
 					// Window : Title =
 					cpp_AddScript(TheFunction, CG_WIN_MEMBER(Token[1], "SetLabel( "));
 				// *** *** *** *** *** ***
-				VALUE_CPP_END = " ); \n";
+				VALUE_CPP_END = " ); } \n"; // Need close [if (WINDOW_IS_CONSTRUCTION_...]
 				// *** *** *** *** *** ***
 			}
 			/*
@@ -317,7 +317,7 @@ void parser_TwoPointOperator(string Token[2048], CLASS_TOKEN *o_tokens){
 			// Window : Option = ...
 
 			TempTokenCount = 0;
-			for (int p = 3; p < o_tokens->TOTAL[o_tokens->Line]; p++) // | = a * b + 2 / (c) + 1 |
+			for (int p = 4; p <= o_tokens->TOTAL[o_tokens->Line]; p++) // | = a * b + 2 / (c) + 1 |
 			{
 				if (Token[p] != "")
 				{

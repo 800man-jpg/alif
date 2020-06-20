@@ -495,8 +495,9 @@ string Generate_AlifJavaScript(){
 		ScriptBuffer.append(R"V0G0N(  
 			void CLASS_WINDOW_)V0G0N" + ID[WindowName] + R"V0G0N(::AlifJavaScript_OnNavigationRequest(wxWebViewEvent& evt){
 				evt.Veto();
-				wxLaunchDefaultBrowser(evt.GetURL());
-			}  
+				if(evt.GetURL().Mid(0,6) != wxT("memory"))
+					wxLaunchDefaultBrowser(evt.GetURL());
+			}
 		)V0G0N");
 
 		// OnNewWindow()
@@ -622,7 +623,7 @@ string Generate_AlifJavaScript(){
 					TokensCount++;
 				}
 				int PramsCount = TokensCount - 1;
-				wxString FunctionReturn = "";
+				wxString FunctionReturn = "''";
 				// Function call condition
 				if (Tokens[0] == wxT("")){
 					this->AlifJavaScript_Error(wxT("إسم الدالة أو متغير عام غير محدد"));
