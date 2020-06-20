@@ -334,7 +334,7 @@ void ALIF_HELP()
 		if (CHECK_FILE_EXISTE(PATH_FULL_BIN))
 	#endif
 	{
-		ALIF_ERROR("\nError: Can't remove : " + PATH_FULL_BIN);
+		ALIF_ERROR("\nأسف، لم تنجح عملية مسح هدا الملف، جرب غلق التطبيق: " + PATH_FULL_BIN);
 		exit(EXIT_FAILURE);
 	}
 

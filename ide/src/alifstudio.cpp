@@ -120,7 +120,7 @@ using namespace std;
 // IDE Version
 // ------------------------------------------------
 
-const static wxString Alif_Studio_Version = wxT("2.0.4");
+const static wxString Alif_Studio_Version = wxT("2.0.14");
 wxString Alif_Compiler_Version = wxT("0");
 
 // ------------------------------------------------
